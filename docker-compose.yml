@@ -1,0 +1,14 @@
+services:
+  # Define o serviço da sua aplicação FastAPI
+  app:
+    # Instrui o Docker Compose a construir a imagem a partir do Dockerfile na mesma pasta
+    build: .
+    container_name: api
+    # Mapeia a porta 8000 do contêiner para a porta 8000 da sua máquina
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual (código-fonte) dentro do contêiner em /app
+    # Isso permite que as alterações no código sejam refletidas instantaneamente (hot-reload)
+    volumes:
+      - .:/app
+
